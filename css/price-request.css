@@ -1,0 +1,172 @@
+/* Isolated additions for price.php; existing table and form styles stay intact. */
+.gic-price-page { width: 100%; min-width: 0; }
+.gic-price-intro,
+.gic-price-support {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    text-align: left;
+}
+.gic-price-intro {
+    margin: 0 0 24px;
+    padding: 24px 26px;
+    border: 1px solid #d9e3f2;
+    border-left: 4px solid #2a5298;
+    border-radius: 8px;
+    background: #f1f5fd;
+}
+.gic-price-intro h2,
+.gic-price-support h2 {
+    margin: 0 0 8px;
+    color: #1e3c72;
+    font-family: inherit;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+.gic-price-intro p,
+.gic-price-support p {
+    margin: 0;
+    max-width: 590px;
+    color: #3f4e65;
+    font-size: 14px;
+    line-height: 1.55;
+}
+.gic-price-button {
+    flex-shrink: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    padding: 12px 20px;
+    border: 1px solid #2a5298;
+    border-radius: 5px;
+    background: #2a5298;
+    color: #fff;
+    font: 600 14px/1.4 'Segoe UI', Tahoma, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+}
+a.gic-price-button:visited { color: #fff; }
+.gic-price-button:hover { background: #1e3c72; border-color: #1e3c72; color: #fff; }
+.gic-price-button:focus-visible,
+.gic-price-close:focus-visible { outline: 3px solid #a9c7f4; outline-offset: 3px; }
+.gic-price-support {
+    margin: 0 10px 10px;
+    padding: 20px;
+    border: 1px solid #d9e3f2;
+    border-radius: 5px;
+    background: #f7f9fc;
+}
+.gic-price-support h2 { font-size: 19px; margin-bottom: 5px; }
+.gic-price-support .gic-price-button { background: #fff; color: #2a5298; }
+.gic-price-support .gic-price-button:visited { color: #2a5298; }
+.gic-price-support .gic-price-button:hover { background: #eaf0fa; }
+.gic-price-dialog {
+    position: fixed;
+    inset: 0;
+    box-sizing: border-box;
+    width: min(460px, calc(100% - 32px));
+    max-width: none;
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 34px;
+    overflow-y: auto;
+    border: 0;
+    border-top: 4px solid #2a5298;
+    border-radius: 10px;
+    background: #fff;
+    color: #333;
+    font: 14px/1.5 'Segoe UI', Tahoma, sans-serif;
+    box-shadow: 0 20px 70px #162b4d40;
+    text-align: left;
+}
+.gic-price-dialog::backdrop { background: #122746a6; }
+html.gic-price-modal-open,
+html.gic-price-modal-open body { overflow: hidden; }
+.gic-price-dialog h2 {
+    margin: 0 30px 10px 0;
+    color: #1e3c72;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.gic-price-dialog p { margin: 0 0 22px; color: #526079; font-size: 14px; line-height: 1.55; }
+.gic-price-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: #526079;
+    font: 30px/1 sans-serif;
+    cursor: pointer;
+}
+.gic-price-close:hover { background: #f1f5fd; color: #1e3c72; }
+.gic-price-form { display: grid; gap: 0; }
+.gic-price-form label { display: block; margin: 0 0 6px; color: #24364f; font-size: 14px; font-weight: 600; }
+.gic-price-form input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    margin: 0 0 18px;
+    padding: 11px 12px;
+    border: 1px solid #b9c5d6;
+    border-radius: 5px;
+    background: #fff;
+    color: #24364f;
+    font: 16px/1.4 'Segoe UI', Tahoma, sans-serif;
+}
+.gic-price-form input::placeholder { color: #758197; opacity: 1; }
+.gic-price-form input:focus { outline: 2px solid #2a5298; outline-offset: 1px; }
+.gic-price-form input:user-invalid { border-color: #b3261e; }
+.gic-price-form #gic-price-phone { margin-bottom: 5px; }
+.gic-price-field-hint { margin: 0 0 18px; color: #637187; font-size: 12px; }
+.gic-price-dialog .gic-price-demo-note { margin: 0 0 12px; font-size: 12px; color: #637187; }
+.gic-price-submit { width: 100%; }
+.gic-price-submit:disabled { opacity: .6; cursor: default; }
+.gic-price-success { padding-top: 6px; }
+.gic-price-success[hidden],
+.gic-price-form-view[hidden] { display: none; }
+.gic-price-success-mark {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: #eaf3ee;
+    color: #277345;
+    font-size: 26px;
+}
+@media (max-width: 680px) {
+    .gic-price-page .tema { font-size: 23px; line-height: 1.35; }
+    .gic-price-intro, .gic-price-support { flex-direction: column; align-items: stretch; gap: 18px; }
+    .gic-price-intro { padding: 20px; }
+    .gic-price-intro h2 { font-size: 22px; }
+    .gic-price-support { padding: 18px; }
+    .gic-price-intro .gic-price-button, .gic-price-support .gic-price-button { width: 100%; }
+    .gic-price-dialog { padding: 30px 22px 24px; }
+    .gic-price-dialog h2 { font-size: 24px; }
+}
+@media (max-width: 380px) {
+    .grid-container-header > .area-header { min-width: 0; }
+    .grid-container-header > .area-header:first-child .logo-header-gic {
+        flex: 1;
+        min-width: 0;
+        background-size: contain;
+        background-position: left center;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .gic-price-button { transition: none; }
+}
